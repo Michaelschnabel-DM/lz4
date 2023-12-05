@@ -350,7 +350,7 @@ UTIL_STATIC int UTIL_prepareFileList(const char *dirName, char** bufStart, size_
                 if (*bufStart == NULL) { free(path); FindClose(hFile); return 0; }
             }
             if (*bufStart + *pos + pathLength < *bufEnd) {
-                strncpy(*bufStart + *pos, path, *bufEnd - (*bufStart + *pos));
+                strncpy_s(*bufStart + *pos, *bufEnd - (*bufStart + *pos), path, *bufEnd - (*bufStart + *pos));
                 *pos += pathLength + 1;
                 nbFiles++;
             }
@@ -460,7 +460,7 @@ UTIL_STATIC const char** UTIL_createFileList(const char **inputNames, unsigned i
                 if (!buf) return NULL;
             }
             if (buf + pos + len < bufend) {
-                strncpy(buf + pos, inputNames[i], bufend - (buf + pos));
+                strncpy_s(buf + pos, bufend - (buf + pos), inputNames[i], bufend - (buf + pos));
                 pos += len + 1;
                 nbFiles++;
             }

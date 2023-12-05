@@ -752,7 +752,7 @@ int FUZ_usage(const char* programName)
 }
 
 
-int main(int argc, const char** argv)
+int main(int argc)
 {
     U32 seed=0;
     int seedset=0;

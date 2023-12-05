@@ -728,7 +728,7 @@ static int badusage(const char* exename)
     return 0;
 }
 
-int main(int argc, const char** argv)
+int main(int argc)
 {
     int i,
         filenamesStart=2;
